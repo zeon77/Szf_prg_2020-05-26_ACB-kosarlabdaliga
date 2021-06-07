@@ -10,6 +10,14 @@ namespace kosar2004
     {
         static void Main(string[] args)
         {
+            //2.
+            List<Meccs> meccsek = new List<Meccs>();
+            foreach (var sor in File.ReadAllLines("eredmenyek.csv").Skip(1))
+            {
+                meccsek.Add(new Meccs(sor));
+            }
+
+
 
             Console.ReadKey();
         }
