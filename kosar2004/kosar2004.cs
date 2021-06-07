@@ -25,6 +25,9 @@ namespace kosar2004
             //4.
             Console.WriteLine($"4. feladat: Volt döntetlen: {(meccsek.Any(x => x.Döntetlen == true) ? "igen" : "nem")}");
 
+            //5.
+            Console.WriteLine($"5. feladat: barcelonai csapat neve: {meccsek.Where(x => x.HazaiCsapat.ToLower().Contains("barcelona")).First().HazaiCsapat}");
+
             Console.ReadKey();
         }
     }
