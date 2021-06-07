@@ -12,7 +12,7 @@ namespace kosar2004
         {
             //2.
             List<Meccs> meccsek = new List<Meccs>();
-            foreach (var sor in File.ReadAllLines("eredmenyek.csv").Skip(1))
+            foreach (var sor in File.ReadAllLines("eredmenyek.csv", Encoding.Default).Skip(1))
             {
                 meccsek.Add(new Meccs(sor));
             }
@@ -27,6 +27,11 @@ namespace kosar2004
 
             //5.
             Console.WriteLine($"5. feladat: barcelonai csapat neve: {meccsek.Where(x => x.HazaiCsapat.ToLower().Contains("barcelona")).First().HazaiCsapat}");
+
+            //6.
+            Console.WriteLine($"6. feladat:");
+            meccsek.Where(x => x.Időpont == DateTime.Parse("2004-11-21"))
+                .ToList().ForEach(x => Console.WriteLine($"\t{x.HazaiCsapat}-{x.IdegenCsapat} ({x.HazaiPont}:{x.IdegenPont})"));
 
             Console.ReadKey();
         }
