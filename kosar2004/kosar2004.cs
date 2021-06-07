@@ -17,7 +17,10 @@ namespace kosar2004
                 meccsek.Add(new Meccs(sor));
             }
 
-
+            //3.
+            Console.WriteLine($"3. feladat: Real Madrid: " +
+                $"Hazai: {meccsek.Where(x => x.HazaiCsapat.Contains("Real Madrid")).Count()}, " +
+                $"Idegen: {meccsek.Where(x => x.IdegenCsapat.Contains("Real Madrid")).Count()}");
 
             Console.ReadKey();
         }
