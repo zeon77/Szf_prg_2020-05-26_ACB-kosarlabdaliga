@@ -22,6 +22,9 @@ namespace kosar2004
                 $"Hazai: {meccsek.Where(x => x.HazaiCsapat.Contains("Real Madrid")).Count()}, " +
                 $"Idegen: {meccsek.Where(x => x.IdegenCsapat.Contains("Real Madrid")).Count()}");
 
+            //4.
+            Console.WriteLine($"4. feladat: Volt döntetlen: {(meccsek.Any(x => x.Döntetlen == true) ? "igen" : "nem")}");
+
             Console.ReadKey();
         }
     }

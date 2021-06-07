@@ -15,6 +15,8 @@ namespace kosar2004
         public string Helyszín { get; set; }
         public DateTime Időpont { get; set; }
 
+        public bool Döntetlen { get => HazaiPont == IdegenPont ? true : false; }
+
         public Meccs(string sor)
         {
             string[] s = sor.Split(';');
