@@ -33,6 +33,13 @@ namespace kosar2004
             meccsek.Where(x => x.Időpont == DateTime.Parse("2004-11-21"))
                 .ToList().ForEach(x => Console.WriteLine($"\t{x.HazaiCsapat}-{x.IdegenCsapat} ({x.HazaiPont}:{x.IdegenPont})"));
 
+            //7.
+            Console.WriteLine($"7. feladat:");
+            meccsek.GroupBy(x => x.Helyszín)
+                .Select(gr => new { Helyszín = gr.Key, db = gr.Count() })
+                .Where(x => x.db > 20)
+                .ToList().ForEach(x => Console.WriteLine($"\t{x.Helyszín}: {x.db}"));
+
             Console.ReadKey();
         }
     }
